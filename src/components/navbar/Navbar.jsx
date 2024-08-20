@@ -4,8 +4,8 @@ import {navMenus} from "./navMenus.js";
 
 function Navbar() {
     return (
-        <nav>
-            <div>
+        <nav className="md:flex items-center justify-around p-4 hidden">
+            <div className="flex items-center gap-8">
                 {
                     navMenus.map((menu, index) => (
                         <a key={index} href={menu.path}>{menu.name}</a>
@@ -13,12 +13,12 @@ function Navbar() {
                 }
             </div>
 
-            <div>
-                <button>
+            <div className="flex items-center gap-4">
+                <button className="flex items-center gap-2">
                     <SiGoogletranslate/> <span>English</span>
                 </button>
 
-                <a href="/sign-up"><span>Sign up</span> <PiCaretRight/></a>
+                <a href="/sign-up" className="flex items-center gap-2 bg-primary w-fit rounded-lg py-2 px-4 text-white/90"><span>Sign up</span> <PiCaretRight/></a>
             </div>
         </nav>
     )
